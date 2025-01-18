@@ -4,8 +4,8 @@ A JavaScript client for interacting with the Synatra staking program on Solana.
 
 ## Features
 
-- Stake SOL or any SPL token
-- Unstake and claim tokens
+- Stake SOL or USDC on Solana
+- Unstake tokens
 - Full TypeScript support via JSDoc annotations
 - Priority fee management
 - Comprehensive error handling
@@ -13,7 +13,7 @@ A JavaScript client for interacting with the Synatra staking program on Solana.
 ## Installation
 
 ```bash
-npm install @synatra/client @coral-xyz/anchor @solana/web3.js @solana/spl-token
+npm install @synatra/client
 ```
 
 ## Quick Start
