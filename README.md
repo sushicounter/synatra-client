@@ -40,7 +40,7 @@ client.setWallet(wallet);
 
 // Stake SOL
 try {
-  const poolId = 0; // use 0 for ySOL pool, 1 for yUSD pool
+  const poolId = 0; // use 0 for SOL, 1 for USDC
   const amount = 1_000_000_000; // 1 SOL (in lamports)
   const signature = await client.stake(poolId, amount);
   console.log(`Stake successful: ${signature}`);
@@ -65,18 +65,22 @@ client.setWallet(phantom);
 
 ## Examples
 
-### Staking SPL Tokens
+### Staking USDC
 
 ```javascript
-// Stake 100 tokens (adjust decimals based on your token)
+// Stake 100 USDC
+const poolId = 1; // USDC pool
+const decimals = 6; // USDC decimals
 const amount = 100 * Math.pow(10, decimals);
 const signature = await client.stake(poolId, amount);
 ```
 
-### Unstaking
+### Unstaking USDC
 
 ```javascript
-// Unstake 50 receipt tokens
+// Unstake 50 yUSD
+const poolId = 1; // USDC pool
+const decimals = 6; // yUSD and USDC will use same decimals
 const receiptAmount = 50 * Math.pow(10, decimals);
 const signature = await client.unstake(poolId, receiptAmount);
 ```
@@ -160,8 +164,4 @@ try {
 
 ## Support
 
-For support, join our [Discord channel](https://discord.gg/DKvknQqGzH) or create an issue on GitHub.
-
-```
-
-```
+For support, join our [Discord channel](https://discord.gg/DKvknQqGzH).
