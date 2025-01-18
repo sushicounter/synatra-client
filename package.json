@@ -1,0 +1,29 @@
+{
+  "name": "@synatra/client",
+  "version": "2.0.0",
+  "description": "A JavaScript client for interacting with the Synatra staking program on Solana.",
+  "main": "SynatraClient.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushicounter/synatra-client.git"
+  },
+  "keywords": [
+    "solana",
+    "defi",
+    "staking"
+  ],
+  "author": "0xcounter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sushicounter/synatra-client/issues"
+  },
+  "homepage": "https://github.com/sushicounter/synatra-client#readme",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.98.0"
+  }
+}
