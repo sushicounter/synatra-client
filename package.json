@@ -1,6 +1,6 @@
 {
   "name": "synatra-client",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A JavaScript client for interacting with the Synatra staking program on Solana.",
   "main": "SynatraClient.js",
   "type": "module",
