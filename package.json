@@ -1,0 +1,49 @@
+{
+  "name": "synatra-client",
+  "version": "2.0.1",
+  "description": "A JavaScript client for interacting with the Synatra staking program on Solana.",
+  "main": "SynatraClient.js",
+  "type": "module",
+  "transform": {},
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "files": [
+    "SynatraClient.js",
+    "synatra-idl.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushicounter/synatra-client.git"
+  },
+  "keywords": [
+    "solana",
+    "defi",
+    "staking"
+  ],
+  "author": "0xcounter",
+  "bugs": {
+    "url": "https://github.com/sushicounter/synatra-client/issues"
+  },
+  "homepage": "https://github.com/sushicounter/synatra-client#readme",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.28.1-beta.1",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.98.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "verbose": true,
+    "globals": {
+      "jest": true
+    },
+    "transform": {},
+    "testEnvironment": "node"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

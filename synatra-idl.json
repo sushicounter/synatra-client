@@ -1,0 +1,213 @@
+{
+  "version": "2.0.0",
+  "name": "synthetic_staking_2",
+  "instructions": [
+    {
+      "name": "stakeSol",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "receiptToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userReceiptAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "stakeToken",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "stakeToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "receiptToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userStakeAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userReceiptAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "poolStakeAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "unstake",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "receiptToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userReceiptAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "claimRecord",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "receiptAmount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Pool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u64"
+          },
+          {
+            "name": "manager",
+            "type": "publicKey"
+          },
+          {
+            "name": "oracle",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeToken",
+            "type": "publicKey"
+          },
+          {
+            "name": "receiptToken",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeRate",
+            "type": "u64"
+          },
+          {
+            "name": "unstakeRate",
+            "type": "u64"
+          },
+          {
+            "name": "receiptMaxSupply",
+            "type": "u64"
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "synatfE5AvWtbDT9sSvDsF9gmeqR9qeq3FA84bhxWur"
+  }
+}
