@@ -74,7 +74,7 @@ export class SynatraClient {
       }
     )
     /** @type {import('@coral-xyz/anchor').Program} */
-    this.program = new Program(idl, this.programPublicKey, this.provider)
+    this.program = new Program(idl, this.provider)
     /** @type {number} */
     this.priorityFeeMicroLamports = priorityFeeMicroLamports;
     /** @type {import('@solana/web3.js').PublicKey} */
