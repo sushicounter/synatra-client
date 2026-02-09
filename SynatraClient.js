@@ -64,7 +64,7 @@ export class SynatraClient {
     /** @type {import('@solana/web3.js').PublicKey} */
     this.programPublicKey = new PublicKey(SYNATRA_PROGRAM_ADDRESS);
     /** @type {import('@solana/web3.js').Connection} */
-    this.connection = new Connection(rpcUrl);
+    this.connection = new Connection(rpcUrl, 'confirmed');
     /** @type {import('@coral-xyz/anchor').AnchorProvider} */
     this.provider = new AnchorProvider(
       this.connection,
@@ -263,6 +263,7 @@ export class SynatraClient {
         .stakeSol(new BN(amount))
         .accounts({
           signer: this.userPublicKey,
+          payer: this.userPublicKey,
           pool: poolPublicKey,
           receiptToken,
           userReceiptAta,
@@ -281,6 +282,7 @@ export class SynatraClient {
       .stakeToken(new BN(amount))
       .accounts({
         signer: this.userPublicKey,
+        payer: this.userPublicKey,
         pool: poolPublicKey,
         stakeToken,
         receiptToken,
@@ -318,6 +320,7 @@ export class SynatraClient {
       .unstake(new BN(receiptAmount))
       .accounts({
         signer: this.userPublicKey,
+        payer: this.userPublicKey,
         pool: poolPublicKey,
         receiptToken,
         userReceiptAta,

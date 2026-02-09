@@ -1,6 +1,6 @@
 {
   "name": "synatra-client",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "A JavaScript client for interacting with the Synatra staking program on Solana.",
   "main": "SynatraClient.js",
   "type": "module",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/sushicounter/synatra-client#readme",
   "dependencies": {
-    "@coral-xyz/anchor": "^0.30.1",
+    "@coral-xyz/anchor": "^0.32.1",
     "@solana/spl-token": "^0.4.9",
     "@solana/web3.js": "^1.98.0"
   },
