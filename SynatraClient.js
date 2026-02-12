@@ -219,6 +219,7 @@ export class SynatraClient {
       pool.id = Number(pool.id);
       pool.stakeRate = Number(pool.stakeRate);
       pool.unstakeRate = Number(pool.unstakeRate);
+      pool.receiptMaxSupply = Number(pool.receiptMaxSupply);
       pool.nonce = Number(pool.nonce);
     } catch (err) {
       if (this.enableLogging) {
