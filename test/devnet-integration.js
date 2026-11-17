@@ -2,7 +2,7 @@
 /**
  * Devnet integration tests for SynatraClient
  * Tests actual stake/unstake/getClaims against the deployed devnet contract.
- * Run with: node test/devnet.test.js
+ * Run with: SYNATRA_DEVNET_KEYPAIR=/path/to/throwaway.json node test/devnet-integration.js
  */
 
 import { SynatraClient } from '../SynatraClient.js'
@@ -15,13 +15,15 @@ const PROGRAM_ID = 'G2HTbxYa9XpiZviwnjtTrPCpfRxT8c6L9BvvJFo59ESx'
 const SOL_POOL_ID = 0
 const TOKEN_POOL_ID = 1
 
-const adminKeypair = JSON.parse(
-  fs.readFileSync(
-    new URL('../../synatra-solana-contract/wallets/admin-dev-wallet.json', import.meta.url),
-    'utf-8'
-  )
+// Use a throwaway devnet keypair. Never point this at an admin, deployer or mainnet wallet.
+const keypairPath = process.env.SYNATRA_DEVNET_KEYPAIR
+if (!keypairPath) {
+  console.error('Set SYNATRA_DEVNET_KEYPAIR to the path of a funded throwaway devnet keypair')
+  process.exit(1)
+}
+const wallet = Keypair.fromSecretKey(
+  new Uint8Array(JSON.parse(fs.readFileSync(keypairPath, 'utf-8')))
 )
-const admin = Keypair.fromSecretKey(new Uint8Array(adminKeypair))
 
 let passed = 0
 let failed = 0
@@ -47,7 +49,7 @@ async function test(name, fn) {
 async function main() {
   // Override the hardcoded program address by patching the IDL
   // The client reads from the IDL, so we construct with the devnet program
-  const client = new SynatraClient(DEVNET_RPC, admin)
+  const client = new SynatraClient(DEVNET_RPC, wallet)
   // The client hardcodes synatfE5... as program address. We need to override it.
   // Since the IDL now has the devnet address (G2HTb...), the Program will use that.
   // But programPublicKey used for PDA derivation still points to synatfE5...
@@ -59,8 +61,8 @@ async function main() {
 
   console.log('\nSynatraClient Devnet Integration Tests')
   console.log(`Program: ${PROGRAM_ID}`)
-  console.log(`Admin: ${admin.publicKey.toBase58()}`)
-  console.log(`Balance: ${(await connection.getBalance(admin.publicKey)) / 1e9} SOL\n`)
+  console.log(`Wallet: ${wallet.publicKey.toBase58()}`)
+  console.log(`Balance: ${(await connection.getBalance(wallet.publicKey)) / 1e9} SOL\n`)
 
   // --- Pool reads ---
 
@@ -110,7 +112,7 @@ async function main() {
     await connection.confirmTransaction(tx, 'confirmed')
 
     // Verify receipt tokens received
-    const receiptAta = getAssociatedTokenAddressSync(solPool.receiptToken, admin.publicKey)
+    const receiptAta = getAssociatedTokenAddressSync(solPool.receiptToken, wallet.publicKey)
     const account = await getAccount(connection, receiptAta)
     assert(account.amount > 0n, 'Should have receipt tokens')
     console.log(`    Receipt balance: ${account.amount}`)
@@ -121,7 +123,7 @@ async function main() {
     await new Promise((r) => setTimeout(r, 2000))
     // Re-fetch pool to get current nonce
     solPool = await client.getPool(SOL_POOL_ID)
-    const receiptAta = getAssociatedTokenAddressSync(solPool.receiptToken, admin.publicKey)
+    const receiptAta = getAssociatedTokenAddressSync(solPool.receiptToken, wallet.publicKey)
     const account = await getAccount(connection, receiptAta)
     const receiptBalance = Number(account.amount)
     console.log(`    Receipt balance before unstake: ${receiptBalance}`)
@@ -196,7 +198,7 @@ async function main() {
   // --- Summary ---
 
   console.log(`\n${passed + failed} tests, ${passed} passed, ${failed} failed`)
-  console.log(`Remaining balance: ${(await connection.getBalance(admin.publicKey)) / 1e9} SOL`)
+  console.log(`Remaining balance: ${(await connection.getBalance(wallet.publicKey)) / 1e9} SOL`)
 
   if (failed > 0) process.exit(1)
 }
