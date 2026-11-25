@@ -34,3 +34,9 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
+# Rust and Python build output
+rust/target/
+python/**/__pycache__/
+python/*.egg-info/
+python/build/
+python/dist/

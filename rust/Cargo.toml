@@ -1,0 +1,18 @@
+[package]
+name = "synatra-client"
+version = "0.1.0"
+edition = "2021"
+description = "Rust client for the Synatra staking program on Solana: PDAs, instructions, accounts."
+repository = "https://github.com/sushicounter/synatra-client"
+readme = "README.md"
+publish = false
+include = ["src/**", "synatra-idl.json", "README.md", "Cargo.toml"]
+
+[dependencies]
+bs58 = "0.5"
+curve25519-dalek = "4"
+serde_json = "1"
+sha2 = "0.10"
+
+[dev-dependencies]
+base64 = "0.22"

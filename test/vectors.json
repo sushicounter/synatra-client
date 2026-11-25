@@ -1,0 +1,248 @@
+{
+  "programId": "synatfE5AvWtbDT9sSvDsF9gmeqR9qeq3FA84bhxWur",
+  "user": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+  "receiptMints": [
+    "yso11GJ3cEsFbmLV9XaFNg2rAmH9yN4oNNbGSDUAVq6",
+    "yUSDGaRxJ2Xh4nJdqaR1JRHLxEr7BTCqdnfhSaaETPE"
+  ],
+  "pdas": [
+    {
+      "seed": "global",
+      "address": "HjYuxB8x4R8u9BYk4cwgneutNWoLAzQGRfXqSY9JmxLt",
+      "bump": 255
+    },
+    {
+      "seed": "pool-0",
+      "address": "2wMDWx7a1PpbrsnNAHGJLPMgRs7H3pcYxqmmkQrzLxHg",
+      "bump": 254
+    },
+    {
+      "seed": "pool-1",
+      "address": "Fm8E4fEAiRraWP2EhMfycyYzYdvNgzQiKUwhxCCUB4ho",
+      "bump": 254
+    },
+    {
+      "seed": "claim-0-0",
+      "address": "5fETgA9LZWQi8ahrX6Nu8jBEHab1Kb6NVofBhxPXxmid",
+      "bump": 255
+    },
+    {
+      "seed": "claim-1-42",
+      "address": "fByn3MZXM5AHRugKWii4d1mMn863RX4BfJg8Pnixzip",
+      "bump": 255
+    }
+  ],
+  "atas": [
+    {
+      "owner": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+      "mint": "So11111111111111111111111111111111111111111",
+      "address": "ChjrN2T8HqJMBuXiz5Ny4KZZa85L5YTKVWkfrQZAK2s1"
+    },
+    {
+      "owner": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "address": "C4PRXFV6Gf5mytVZb6RoeLsG8CjcFWzR2EJ3dvwPTUJH"
+    },
+    {
+      "owner": "Fm8E4fEAiRraWP2EhMfycyYzYdvNgzQiKUwhxCCUB4ho",
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "address": "DME9KG2K16wTWvpMrijFHDzsENZAf1YS7DLwzWG2AiHU"
+    }
+  ],
+  "instructions": [
+    {
+      "name": "stake_sol",
+      "poolId": 0,
+      "amount": "1000000000",
+      "keys": [
+        {
+          "pubkey": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "pubkey": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "pubkey": "2wMDWx7a1PpbrsnNAHGJLPMgRs7H3pcYxqmmkQrzLxHg",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "yso11GJ3cEsFbmLV9XaFNg2rAmH9yN4oNNbGSDUAVq6",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "Crgowsjcg26p2EGeQjwzWnznCL2LbAQVGgzkcVRKoDBh",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+          "signer": false,
+          "writable": false
+        },
+        {
+          "pubkey": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signer": false,
+          "writable": false
+        },
+        {
+          "pubkey": "11111111111111111111111111111111",
+          "signer": false,
+          "writable": false
+        }
+      ],
+      "data": "c8269d9bf539eca800ca9a3b00000000"
+    },
+    {
+      "name": "stake_token",
+      "poolId": 1,
+      "amount": "1000000000",
+      "keys": [
+        {
+          "pubkey": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "pubkey": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "pubkey": "Fm8E4fEAiRraWP2EhMfycyYzYdvNgzQiKUwhxCCUB4ho",
+          "signer": false,
+          "writable": false
+        },
+        {
+          "pubkey": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "yUSDGaRxJ2Xh4nJdqaR1JRHLxEr7BTCqdnfhSaaETPE",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "C4PRXFV6Gf5mytVZb6RoeLsG8CjcFWzR2EJ3dvwPTUJH",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "7FMmXWhG1FaMU8ZdoRgxpjrmGUfzhea8PLEZFarxuHfM",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "DME9KG2K16wTWvpMrijFHDzsENZAf1YS7DLwzWG2AiHU",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+          "signer": false,
+          "writable": false
+        },
+        {
+          "pubkey": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signer": false,
+          "writable": false
+        },
+        {
+          "pubkey": "11111111111111111111111111111111",
+          "signer": false,
+          "writable": false
+        }
+      ],
+      "data": "bf7fc165256057d300ca9a3b00000000"
+    },
+    {
+      "name": "unstake",
+      "poolId": 1,
+      "nonce": 42,
+      "amount": "1000000000",
+      "keys": [
+        {
+          "pubkey": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "pubkey": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "pubkey": "Fm8E4fEAiRraWP2EhMfycyYzYdvNgzQiKUwhxCCUB4ho",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "yUSDGaRxJ2Xh4nJdqaR1JRHLxEr7BTCqdnfhSaaETPE",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "7FMmXWhG1FaMU8ZdoRgxpjrmGUfzhea8PLEZFarxuHfM",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "fByn3MZXM5AHRugKWii4d1mMn863RX4BfJg8Pnixzip",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "pubkey": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+          "signer": false,
+          "writable": false
+        },
+        {
+          "pubkey": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signer": false,
+          "writable": false
+        },
+        {
+          "pubkey": "11111111111111111111111111111111",
+          "signer": false,
+          "writable": false
+        }
+      ],
+      "data": "5a5f6b2acd7c32e100ca9a3b00000000"
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Pool",
+      "fields": {
+        "id": "1",
+        "manager": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+        "oracle": "11111111111111111111111111111111",
+        "stake_token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "receipt_token": "yUSDGaRxJ2Xh4nJdqaR1JRHLxEr7BTCqdnfhSaaETPE",
+        "stake_rate": "104321",
+        "unstake_rate": "104000",
+        "receipt_max_supply": "18446744073709551615",
+        "nonce": "42"
+      },
+      "data": "8ZptBBGxbbwBAAAAAAAAAGdSBVwgs+nYdGZW3fc4VVB/h6tth1I+THan+jYJapnrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADG+nrzvtutOj1l82qryXQxsbvkwtL24OR8pgIDRS9dYQ53i7mlGalhS5yClPN+8XV85Zh7Jb/jag4WjtrfeP+pgZcBAAAAAABAlgEAAAAAAP//////////KgAAAAAAAAA="
+    },
+    {
+      "name": "ClaimRecord",
+      "fields": {
+        "pool_id": "1",
+        "claimer": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+        "nonce": "41",
+        "receipt_amount": "2500000",
+        "unstake_rate": "104000",
+        "fulfilled": true
+      },
+      "data": "OeUACUE+YAcBAAAAAAAAAGdSBVwgs+nYdGZW3fc4VVB/h6tth1I+THan+jYJapnrKQAAAAAAAACgJSYAAAAAAECWAQAAAAAAAQ=="
+    }
+  ]
+}

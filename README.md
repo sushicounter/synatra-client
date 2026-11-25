@@ -189,6 +189,13 @@ try {
 }
 ```
 
+## Python and Rust
+
+Offline Python and Rust clients built on the same IDL live in [`python/`](python/README.md) and
+[`rust/`](rust/README.md). They derive the program addresses, build the `stake_sol`,
+`stake_token` and `unstake` instructions and decode pool and claim accounts. They are not part of
+the npm package.
+
 ## Quality Assurance
 
 This package is thoroughly tested with comprehensive Jest test suites covering client initialization, input validation, pool operations, and staking functionality. The test suite includes compatibility checks for different Node.js versions and validates both success and error scenarios.
