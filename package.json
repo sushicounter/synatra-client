@@ -6,7 +6,11 @@
   "type": "module",
   "transform": {},
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:python": "cd python && python3 -m unittest discover -s tests",
+    "test:rust": "cargo test --manifest-path rust/Cargo.toml",
+    "test:all": "npm test && npm run test:python && npm run test:rust",
+    "vectors": "node test/vectors.js"
   },
   "files": [
     "SynatraClient.js",
@@ -41,7 +45,12 @@
       "jest": true
     },
     "transform": {},
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/python/",
+      "/rust/"
+    ]
   },
   "publishConfig": {
     "access": "public"

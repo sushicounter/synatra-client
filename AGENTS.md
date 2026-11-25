@@ -9,6 +9,12 @@ One ES module, `SynatraClient.js`, plus the program IDL `synatra-idl.json`. It w
 mainnet program `synatfE5AvWtbDT9sSvDsF9gmeqR9qeq3FA84bhxWur` (IDL v2.1.0, which exposes only the
 public instructions `stake_sol`, `stake_token` and `unstake`).
 
+`python/` and `rust/` hold offline Python and Rust clients built on the same IDL (each carries a
+copy, kept identical by tests). They derive the PDAs and ATAs, build the three instructions and
+decode `Pool` and `ClaimRecord`; they do not call an RPC node or sign. `test/vectors.json`,
+written by `node test/vectors.js` from the JS stack, is what both are tested against. The npm
+package stays JS-only, and nothing is published to PyPI or crates.io without counter's yes.
+
 - App: https://app.synatra.xyz
 - Docs: https://docs.synatra.xyz
 - API: https://api.synatra.xyz (used by `getClaims`)
@@ -82,12 +88,18 @@ These apply to every agent, every time.
 ```bash
 npm install
 npm test                          # Jest unit tests
+npm run test:python               # Python client (stdlib unittest, Python 3.9+)
+npm run test:rust                 # Rust client (cargo test)
+npm run test:all                  # all three
+npm run vectors                   # rewrite test/vectors.json after an IDL change
 node test/devnet-integration.js   # devnet integration tests, see the devnet-testing skill
 ```
 
 - Node 20.10 or newer (the client imports JSON with `with { type: 'json' }`).
 - Six unit tests read mainnet through `https://api.mainnet-beta.solana.com` and time out where
-  that RPC is unreachable; the other ten run offline.
+  that RPC is unreachable; the others run offline.
+- After changing `synatra-idl.json`, copy it to `python/synatra_client/` and `rust/`, then run
+  `npm run vectors`; `npm test` fails until all three copies and the vectors agree.
 - `package.json` `files` publishes only `SynatraClient.js`, `synatra-idl.json` and `README.md`.
 - Publishing to npm and merging to `main` wait for the maintainer, counter.
 - Work on a branch and open a pull request. Add or update tests with any behaviour change.

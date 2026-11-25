@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synatra-client"
+version = "0.1.0"
+description = "Python client for the Synatra staking program on Solana: PDAs, instructions, accounts."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/sushicounter/synatra-client"
+
+[tool.setuptools]
+packages = ["synatra_client"]
+
+[tool.setuptools.package-data]
+synatra_client = ["synatra-idl.json"]
